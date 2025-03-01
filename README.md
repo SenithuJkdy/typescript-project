@@ -143,12 +143,32 @@ This will **watch for changes, recompile, and run the latest JavaScript automati
 
 ---
 
+# **✅ Understanding `npm start` and `npm run dev`**
+- **`npm start`** runs the `start` script in `package.json`, usually used to execute the built JavaScript file (`node dist/index.js`).
+- **`npm run dev`** runs the `dev` script, which starts TypeScript in watch mode (`tsc --watch`) along with `nodemon`, ensuring the project recompiles and restarts on file changes.
+
+---
+
+# **📝 Create a `.gitignore` File**
+Create a `.gitignore` file in the root directory and add the following:
+```gitignore
+node_modules/
+dist/
+.env
+```
+- **`node_modules/`**: Prevents uploading dependencies.
+- **`dist/`**: Avoids committing compiled JavaScript files.
+- **`.env`**: If you use environment variables, keep them private.
+
+---
+
 # **✅ Summary of Important Commands**
 | Command | Description |
 |---------|------------|
 | `npx tsc` | Compile TypeScript files manually |
 | `npx tsc --watch` | Watch for changes and recompile automatically |
 | `npx nodemon` | Watch for JavaScript changes and re-run the output |
+| `npm start` | Run the compiled JavaScript file (`dist/index.js`) |
 | `npm run dev` | Run both `tsc --watch` and `nodemon` at the same time |
 
 ---
